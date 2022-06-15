@@ -5,7 +5,9 @@ export default class BasicLWC extends LightningElement {
 
     get name()
     {
-        this.fullname = 'Mani';
+        this.fullname = 'ManiChandra Derangula';
         return this.fullname;
     }
+
+    //Output : -- name = 'ManiChandra Derangula'
 }
