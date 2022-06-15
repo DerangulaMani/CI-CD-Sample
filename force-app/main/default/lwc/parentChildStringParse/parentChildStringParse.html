@@ -1,0 +1,22 @@
+<template>
+    <lightning-card class="slds-var-p-around_medium">
+        <div style="padding: 12px;">
+            {countryname}
+            {percentage}
+            My FullName is {name}
+        </div>
+        <div class="padding:15px">
+            <template for:each={familydata} for:item="item">
+                <div class="family" key={item}> {item} </div>
+            </template>
+        </div>
+
+        <header>
+            {header}
+        </header>
+        <p> {body} </p>
+        <footer>
+            <button onclick={clickbutton}> removerHader </button>
+        </footer>
+    </lightning-card>
+</template>

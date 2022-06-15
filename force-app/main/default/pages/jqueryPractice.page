@@ -1,0 +1,36 @@
+<apex:page >
+    
+    <head>   
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+            
+            $(document).ready(function() {
+            $('#btnSubmit').click(function () {
+                var result =  $('input[type="radio"]:checked');
+                console.log(result);
+                if(result.length > 0 ) { 
+                    $('#divResult').html(result.val() +" Is Checked" );
+                }
+                else {
+                    $('#divResult').html(" Is Not Checked" );
+                }
+            });
+            
+        });
+        
+        </script>
+    </head>
+    <body style = "padding-top:50px;">
+        Gender 
+        <input type="radio" name="gender" value="Male"/> Male
+        <input type="radio" name="gender" value="FeMale"/> FeMale
+        <br/>
+        <br/>
+        <input type="submit" value="submit" id="btnSubmit"/>
+        <br/>
+        <br/>
+        <div id="divResult">
+            
+        </div>
+    </body>
+</apex:page>

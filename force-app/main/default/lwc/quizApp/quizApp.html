@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="QuizApp">
+        <template for:each = {myQuestions} for:item="item">
+
+            <div key = {item.id}>
+                {item.id} - {item.question} </br>
+                <div  class="slds-col">
+                    <input type="radio" name={item.id} value="a" onchange={changeHandler}/>
+                    {item.answers.a} 
+                </div>
+                <div class="slds-col">
+                    <input type="radio" name={item.id} value="b" onchange={changeHandler}/>
+                    {item.answers.b} 
+                </div>
+                <div class="slds-col">
+                    <input type="radio" name={item.id} value="c" onchange={changeHandler}/>
+                     {item.answers.c}
+                </div> 
+            </div>
+        </template>
+        <lightning-button 
+                variant="brand" 
+                type="submit"
+                label="Submit"
+                class="slds-m-around_small"
+                disabled={allNotSelected}
+                onclick={submitHandler}></lightning-button>
+    <template if:true={CorectAns}>
+        You Got {CorrecAnswers} Marks Out Of {myQuestions.length}
+    </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,25 @@
+<template>
+    <div class="slds-p-around_medium">
+        <lightning-card title="Total Opportunities">
+            <lightning-combobox name="progress" label="State" value={value} placeholder="Select Progress"  options={options}
+            onchange={handleChange} >
+            <p>State Name  </p>
+        </lightning-combobox>
+        </lightning-card>
+    </div>
+    <lightning-layout multiple-rows>
+        
+        <lightning-layout-item size="6" padding="around-small" >
+            <lightning-card title="Bar Chart">
+                        <c-charts type = 'bar'></c-charts>
+            </lightning-card>
+        </lightning-layout-item>
+        <lightning-layout-item size="6" padding="around-small" >
+            <lightning-card title="Pie Chart">
+                        <c-charts type = 'pie'></c-charts>
+            </lightning-card>
+        </lightning-layout-item>
+
+    </lightning-layout>
+
+</template>

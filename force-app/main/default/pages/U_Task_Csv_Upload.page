@@ -1,0 +1,46 @@
+<apex:page controller="importDataFromCSVController" sidebar="false" showHeader="false">
+    <apex:form id="form1">
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="1" id="pgb1"> 
+                <apex:inputFile value="{!csvFileBody}"  filename="{!csvAsString}"  />
+                <apex:actionRegion >
+                <apex:commandButton value="Save" action="{!save}" style="color:red"  reRender="pgb1"/>
+                </apex:actionRegion>
+            </apex:pageBlockSection>  
+            <apex:pageBlockSection title="Contacts to be inserted" id="pgb2" rendered="{!show}">
+            <apex:pageBlocktable value="{!display_list}" var="a" id="pbt2">
+                    <apex:column headerValue="AccountName" > 
+                        <apex:inputText value="{!a.acc.Name}" />    
+                    </apex:column>  
+                    <apex:column headerValue="Phone" > 
+                        <apex:inputText value="{!a.acc.Phone}" />    
+                    </apex:column> 
+                    <apex:column headerValue="Website" > 
+                        <apex:inputText value="{!a.acc.Website}"  />    
+                    </apex:column> 
+                    <apex:column headerValue="Debit Amount" id="debitamt"> 
+                          <apex:actionRegion >
+                              <apex:inputText value="{!a.acc.Debit__c}" >
+                                  <apex:actionSupport event="onchange" action="{!display}" reRender="pgb2,pbt2">
+                                      <apex:param name="accId" value="{!a.acc.index__c}" assignTo="{!accId}"/>
+                                  </apex:actionSupport>    
+                              </apex:inputText>   
+                               </apex:actionRegion>
+                        <apex:facet name="footer" >
+                            <apex:outputText value="Total" />
+                        </apex:facet>
+                    </apex:column> 
+                    <apex:column headerValue="Credit Amount"> 
+                        <apex:actionRegion >
+                            <apex:inputField value="{!a.acc.Credit__c}">
+                                <apex:actionSupport event="onchange" action="{!display}"  reRender="pgb2" >
+                                </apex:actionSupport>    
+                            </apex:inputField>    
+                        </apex:actionRegion>
+                    </apex:column> 
+                </apex:pageBlocktable>
+            </apex:pageBlockSection>
+                
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

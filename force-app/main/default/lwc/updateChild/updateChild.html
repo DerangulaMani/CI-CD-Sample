@@ -1,0 +1,11 @@
+<template>
+   <div class="slds-p-around_small">
+        <p> What is Your Name ?</p>
+        <div><slot name = "first"></slot></div>
+        <p> What is Your Age ?</p>
+        <div><slot name = "second"  ></slot></div>
+        <footer class="slds-card__footer slds-hide">
+            <slot name = 'footer' onslotchange={handlefooter}></slot>
+        </footer>
+   </div>
+</template>

@@ -1,0 +1,13 @@
+<template>
+    <lightning-card>
+        <lightning-input type="text" lable = 'Enter Your Name' name="fullname" value={fullname} onkeyup={changeHandler} >
+         </lightning-input>
+         <lightning-input type = "text" lable = 'Enter Your Father Name' name="fathername" value={fathername} onkeyup={changeHandler} >
+        </lightning-input>
+        <p> My Name is {fullname}</p>
+        <p>My Father Name is {fathername}}</p>
+        <div>
+            <c-parent-child-string-parse countryname="India" ></c-parent-child-string-parse>
+        </div>
+    </lightning-card>
+</template>

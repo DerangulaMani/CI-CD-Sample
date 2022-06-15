@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="getObjectInfo Adapter">
+        <div class="slds-var-p-around_medium">
+            <template if:true={objectInfo.data}>
+                <div>defaultRecordTypeId: {objectInfo.data.defaultRecordTypeId}</div>
+                <div>Object API Name: {objectInfo.data.apiName}</div>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="getRecordInfo Adapter">
+        <div class="slds-var-p-around_medium">
+            <template if:true={Recordinformation.data}>
+                <div>Account Name : {Recordinformation.data.fields.Name.value}</div>
+                <div>Account phone : {Recordinformation.data.fields.phone.value}</div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

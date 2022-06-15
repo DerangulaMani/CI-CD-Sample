@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title=" We Implemented Map.">
+            <lightning-map map-markers={mapMarkers} zoom-level="15"
+                markers-title={maekersTitle}
+                onmarkerselect = {callMarkerHandler}
+                selected-marker-value={selectedMarker} 
+            ></lightning-map>
+    </lightning-card>
+</template>

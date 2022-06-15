@@ -1,0 +1,12 @@
+<template>
+    <lightning-card class="slds-var-m-around_medium">
+        <div>
+            <template if:true={selectedName}>
+               <h1> Name is {selectedName.name} </h1> </br>
+                <h1> Age is {selectedName.age} </h1>
+                <lightning-button label = "StylesAdd" onclick={fetchDetailsHandler}></lightning-button>
+            </template>
+        </div>
+        <c-nav-bar-child-component onselection={selectName} family={family}></c-nav-bar-child-component>
+    </lightning-card>
+</template>

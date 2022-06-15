@@ -1,0 +1,25 @@
+<template>
+    <lightning-card class="slds-var-p-around_medium">
+        <template for:each={family} for:item="item">
+            <div class="name" key={item}> Name : {item}</div>
+        </template>
+        <h2> Hello Manichandra. </h2>
+        <lightning-button label = "DetailsFetch" onclick={fetchDetailsHandler}></lightning-button>
+    
+        <div style="padding: 20px;">
+            {country}
+        </div>
+        <div class="child" lwc:dom = "manual"> </div>
+        <lightning-button label = "showHeader" onclick={showHeader}> </lightning-button>
+        <lightning-button label="Button" onclick={handleChildMethod}> </lightning-button>
+        <lightning-input label = "Enter Percentage" name="percentage" onkeyup={changeHandler} value={percentage} > </lightning-input>
+      
+       
+        <c-parent-child-string-parse 
+            header="childToParent Action"
+            body="childToParent Action in Realtime We Use More This."
+            onclose={removeheader}
+        ></c-parent-child-string-parse>
+        
+    </lightning-card>
+</template>

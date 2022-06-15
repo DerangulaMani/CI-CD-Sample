@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title = "Implement Model PopUp">
+        <lightning-button variant="success" lable = "OpenPopUpModel" title="Successful action" onclick ={HandlePopUpModel} class="slds-m-left_x-small">
+        </lightning-button>
+        <lightning-button variant="success" lable = "OpenSecondPopUpModel" title="Successful action" onclick ={HandleSecondPopUpModel} class="slds-m-left_x-small">
+        </lightning-button>
+        <template if:true={OpenPopModel}>
+           <c-child-model onclose = {HandlePopClose}> 
+               <h2 slot = "title">  Model Header</h2>
+               <p> MY Name Is Manichandra Derangula Present I Work In Banglore</p> </br>
+               <p> I Completed BTech With Computer Science Student IN RGUKT.</p>
+               <h1 slot ="footer"> 
+                   <lightning-button variant = "neutral" label="close" onclick={HandlePopClose}></lightning-button>
+                   <lightning-button variant = "brand" label="Save"></lightning-button>
+               </h1>
+           </c-child-model>
+        </template>
+
+        <template if:true={SecondPopModel}>
+            <c-child-model onclose = {HandleSecondPopClose}> 
+                <h2 slot = "title">  Model Header</h2>
+                <p> MY Name Is Manichandra Derangula Present I Work In Banglore</p> </br>
+                <p> I Completed BTech With Computer Science Student IN RGUKT.</p>
+                <h1 slot ="footer"> 
+                    <lightning-button variant = "neutral" label="close" onclick={HandlePopClose}></lightning-button>
+                    <lightning-button variant = "brand" label="Save"></lightning-button>
+                </h1>
+            </c-child-model>
+         </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,49 @@
+<template>
+    <div class="slds-p-around_small">
+        <lightning-card title = "CarFilter" icon-name="standard:calibration">
+            <lightning-input label = "Search" type = "search" value = "{filter.searchkey}"
+            onchange={handleSearchkey}></lightning-input>
+
+            <lightning-slider label="Volume" value={filter.maxvalue} min = '0' max = '999999' step = "100"
+            onchange={handleMaxPricechange}></lightning-slider>
+            <section>
+                <h2> Category </h2>
+                <template if:true={categoryPicklist.data}>
+                    <template for:each={categoryPicklist.data.values} for:item = "item">
+                        <lightning-input key = {item.value}
+                            label ={item.label}
+                            type="checkbox" 
+                            data-name = "category"
+                            data-value ={item.value}
+                            checked 
+                            onchange ={handleCheckbox}  
+                            name = "category"
+                         >
+                        </lightning-input>
+                </template>
+                </template>
+                <template if:true={categoryPicklist.error}>
+                    <p> Geeting Error</p>
+                </template>
+            </section>
+            <section>
+                <h2> Make </h2>
+                <template if:true={MakePicklist.data}>
+                    <template for:each={MakePicklist.data.values} for:item = "make">
+                        <lightning-input key = {make.value} 
+                        label ={make.label} 
+                        data-name = "make"
+                        type="checkbox" 
+                        data-value ={make.value}
+                        checked 
+                        onchange ={handleCheckbox}>
+                        </lightning-input>
+                     </template>
+                </template>
+                <template if:true={MakePicklist.error}>
+                    <p> Geeting Error</p>
+                </template>
+            </section>
+        </lightning-card>
+    </div>
+</template>

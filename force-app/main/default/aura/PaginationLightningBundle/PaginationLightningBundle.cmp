@@ -1,0 +1,3 @@
+<aura:component controller = "GetallAccounts" implements="force:appHostable" >
+	
+</aura:component>

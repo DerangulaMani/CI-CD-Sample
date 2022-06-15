@@ -1,0 +1,9 @@
+<template>
+    <lightning-card class="slds-var-p-around_medium">
+        <template for:each={family} for:item="item" for:index="index">
+            <a key={item.name} onclick={handleNavSelection} name={item.name}> 
+                {item.name} </br>
+            </a>
+        </template>
+    </lightning-card>
+</template>
